@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- powered by rapidxml -->
+<config>
+	<to>George</to>
+	<from gender="male" id="007">John</from>
+	<filename>Rapidxml\a.xml</filename>
+	<host>http://192.168.0.1</host>
+</config>
+

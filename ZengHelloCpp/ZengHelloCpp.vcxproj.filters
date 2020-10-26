@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\Common">
+      <UniqueIdentifier>{006602b6-46bc-4f7e-be51-cf6248adbe26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Glib">
+      <UniqueIdentifier>{955c8040-0fc5-4c55-8923-fc2c13c03486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Ini">
+      <UniqueIdentifier>{34e8cc27-67b8-4a0b-b81c-8fad14410f67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Json">
+      <UniqueIdentifier>{9976a764-28a5-4406-9441-26678dae072d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Openssl">
+      <UniqueIdentifier>{e15f2b67-af49-4b38-9ce6-55b9b427a474}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Rapidxml">
+      <UniqueIdentifier>{84d7c279-742c-4c95-be29-dd0a89eec0df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Winapi">
+      <UniqueIdentifier>{aaee442b-caf1-4047-8272-959dc31d668e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Xxtea">
+      <UniqueIdentifier>{27ed5184-8161-4352-a906-4bac36cdce5d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\UtilsTest.cpp">
+      <Filter>源文件\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Glib\GlibTest.cpp">
+      <Filter>源文件\Glib</Filter>
+    </ClCompile>
+    <ClCompile Include="Ini\IniWriter.cpp">
+      <Filter>源文件\Ini</Filter>
+    </ClCompile>
+    <ClCompile Include="Ini\IniReader.cpp">
+      <Filter>源文件\Ini</Filter>
+    </ClCompile>
+    <ClCompile Include="Json\JsonTest.cpp">
+      <Filter>源文件\Json</Filter>
+    </ClCompile>
+    <ClCompile Include="Openssl\Crypt.cpp">
+      <Filter>源文件\Openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="Openssl\CryptTest.cpp">
+      <Filter>源文件\Openssl</Filter>
+    </ClCompile>
+    <ClCompile Include="Rapidxml\RapidXmlTest.cpp">
+      <Filter>源文件\Rapidxml</Filter>
+    </ClCompile>
+    <ClCompile Include="Winapi\WinAPITest.cpp">
+      <Filter>源文件\Winapi</Filter>
+    </ClCompile>
+    <ClCompile Include="Xxtea\xxtea.c">
+      <Filter>源文件\Xxtea</Filter>
+    </ClCompile>
+    <ClCompile Include="Xxtea\XxteaTest.cpp">
+      <Filter>源文件\Xxtea</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Utils.cpp">
+      <Filter>源文件\Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Common\UtilsTest.h">
+      <Filter>源文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Glib\GlibTest.h">
+      <Filter>源文件\Glib</Filter>
+    </ClInclude>
+    <ClInclude Include="Ini\iniWriter.h">
+      <Filter>源文件\Ini</Filter>
+    </ClInclude>
+    <ClInclude Include="Ini\IniReader.h">
+      <Filter>源文件\Ini</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\JsonTest.h">
+      <Filter>源文件\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Openssl\Crypt.h">
+      <Filter>源文件\Openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="Openssl\CryptTest.h">
+      <Filter>源文件\Openssl</Filter>
+    </ClInclude>
+    <ClInclude Include="Rapidxml\RapidXmlTest.h">
+      <Filter>源文件\Rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="Winapi\WinAPITest.h">
+      <Filter>源文件\Winapi</Filter>
+    </ClInclude>
+    <ClInclude Include="Xxtea\xxtea.h">
+      <Filter>源文件\Xxtea</Filter>
+    </ClInclude>
+    <ClInclude Include="Xxtea\XxteaTest.h">
+      <Filter>源文件\Xxtea</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Utils.h">
+      <Filter>源文件\Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
