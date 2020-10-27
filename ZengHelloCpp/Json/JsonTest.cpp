@@ -5,7 +5,7 @@ using namespace std;
 
 void JsonTest::test_parsejson()
 {
-	cout << "test_parsejson()" << endl;
+	cout << "**** test_parsejson()" << endl;
 	string str = "{\"data\":{\"action\":11,\"strategy\":{\"algorithmkey\":\"ABCDEFG\",\"bindings\":[{\"app\":\"WPS.EXE\",\"ext\":\".doc,.xls,.txt\"},{\"app\":\"WINWORD.EXE\",\"ext\":\".doc\"},{\"app\":\"EXCEL.EXE\",\"ext\":\".xls\"}],\"suffix\":\".doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.xmind,.png,.jpg,.jpeg,.tlf\",\"scantype\":1,\"algorithm\":\"AES128\"}},\"signalId\":156,\"command\":12}";
 	Json::Value root;
 	Json::Reader reader;
@@ -28,7 +28,7 @@ void JsonTest::test_parsejson()
 
 void JsonTest::test_buildjson()
 {
-	cout << "test_buildjson()" << endl;
+	cout << "**** test_buildjson()" << endl;
 	Json::Value root;
 	Json::FastWriter writer;
 	root["type"] = 101;

@@ -8,7 +8,7 @@ using namespace std;
 
 void CryptTest::test_aes()
 {
-	cout << "test_aes()" << endl;
+	cout << "**** test_aes()" << endl;
 	// encrypt: char* -> unsigned char* -> hex
 	Json::Value root;
 	root["checkParam"] = "apiKey=testkeyasdsadsadasdas&nonStr=TYphone9&timestamp=1601005126&sign=94a1bc9cd97adce8e72cdb8d62c10606";

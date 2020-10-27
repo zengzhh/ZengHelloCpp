@@ -8,7 +8,7 @@ using namespace std;
 
 bool UtilsTest::test_SplitString()
 {
-	cout << "test_SplitString()" << endl;
+	cout << "**** test_SplitString()" << endl;
 	string str = "";
 	vector<string> v;
 	Utils::SplitString(str, v, ".");

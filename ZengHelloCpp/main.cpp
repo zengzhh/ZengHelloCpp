@@ -3,11 +3,12 @@
 
 #include <iostream>
 #include "Common/UtilsTest.h"
-#include "Rapidxml/RapidXmlTest.h"
-#include "Xxtea/XxteaTest.h"
+#include "Glib/GlibTest.h"
 #include "Json/JsonTest.h"
 #include "Openssl/CryptTest.h"
-#include "Glib/GlibTest.h"
+#include "Rapidxml/RapidXmlTest.h"
+#include "Winapi/WinAPITest.h"
+#include "Xxtea/XxteaTest.h"
 
 using namespace std;
 
@@ -21,6 +22,10 @@ int main()
 
 	UtilsTest utilsTest;
 	utilsTest.test_SplitString();
+
+	WinAPITest winAPITest;
+	winAPITest.test_strsafe_StringCchPrintf();
+	winAPITest.test_winreg_RegOpenKey();
 
 	XxteaTest xxteaTest;
 	xxteaTest.test_encrypt();
@@ -36,4 +41,6 @@ int main()
 	GlibTest glibTest;
 	glibTest.test_StringUtility();
 	glibTest.test_Base64Encoding();
+
+	cin.get();
 }

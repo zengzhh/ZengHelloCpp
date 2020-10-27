@@ -8,7 +8,7 @@ using namespace std;
 
 void XxteaTest::test_encrypt()
 {
-	cout << "test_encrypt()" << endl;
+	cout << "**** test_encrypt()" << endl;
 	// src(char*) -> des(unsigned char*) -> hex(char*)
 	string src = "hello xxtea";
 	// º”√‹
@@ -25,7 +25,7 @@ void XxteaTest::test_encrypt()
 
 void XxteaTest::test_decrypt()
 {
-	cout << "test_decrypt()" << endl;
+	cout << "**** test_decrypt()" << endl;
 	// hex(char*) -> des(unsigned char*) -> src(char*)
 	string hex = "84e99106b26485c78caede6affc65dc2";
 	// Ω‚¬Î

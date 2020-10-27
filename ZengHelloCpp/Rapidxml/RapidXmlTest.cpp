@@ -8,7 +8,7 @@ using namespace std;
 
 bool RapidXmlTest::test_createxml()
 {
-	cout << "test_createxml()" << endl;
+	cout << "**** test_createxml()" << endl;
 	string XMLFileName = "Rapidxml\\a.xml";
 
 	if (_access(XMLFileName.c_str(), 0) == 0)
@@ -73,7 +73,7 @@ bool RapidXmlTest::test_createxml()
 
 bool RapidXmlTest::test_accessdom()
 {
-	cout << "test_accessdom()" << endl;
+	cout << "**** test_accessdom()" << endl;
 	string XMLFileName = "Rapidxml\\a.xml";
 	if (_access(XMLFileName.c_str(), 0) != 0)
 	{
@@ -124,7 +124,7 @@ bool RapidXmlTest::test_accessdom()
 
 bool RapidXmlTest::test_insertnode()
 {
-	cout << "test_insertnode()" << endl;
+	cout << "**** test_insertnode()" << endl;
 	string XMLFileName = "Rapidxml\\a.xml";
 	// load xml
 	rapidxml::file<> fdoc(XMLFileName.c_str());
@@ -160,7 +160,7 @@ bool RapidXmlTest::test_insertnode()
 
 bool RapidXmlTest::test_removenode()
 {
-	cout << "test_removenode()" << endl;
+	cout << "**** test_removenode()" << endl;
 	string XMLFileName = "Rapidxml\\a.xml";
 
 	// load xml
