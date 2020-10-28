@@ -8,6 +8,7 @@
 *.sln.docstates
 /_build/
 /ZengHelloCpp/_temp/
+/ZengHelloCpp/logs/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

@@ -9,6 +9,7 @@
 #include "Rapidxml/RapidXmlTest.h"
 #include "Winapi/WinAPITest.h"
 #include "Xxtea/XxteaTest.h"
+#include "Spdlog/SpdlogTest.h"
 
 using namespace std;
 
@@ -16,7 +17,7 @@ int main()
 {
 	cout << "Hello CPP\n\n";
 
-	RapidXmlTest rapidXmlTest;
+	/*RapidXmlTest rapidXmlTest;
 	rapidXmlTest.test_createxml();
 	rapidXmlTest.test_accessdom();
 
@@ -40,7 +41,10 @@ int main()
 
 	GlibTest glibTest;
 	glibTest.test_StringUtility();
-	glibTest.test_Base64Encoding();
+	glibTest.test_Base64Encoding();*/
+
+	SpdlogTest spdlogTest;
+	spdlogTest.test_SpdlogTest();
 
 	cin.get();
 }

@@ -37,6 +37,9 @@
     <Filter Include="源文件\Xxtea">
       <UniqueIdentifier>{27ed5184-8161-4352-a906-4bac36cdce5d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Spdlog">
+      <UniqueIdentifier>{666d3813-30eb-4dfe-acf5-42ab2a4406f0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -78,6 +81,9 @@
     <ClCompile Include="Common\Utils.cpp">
       <Filter>源文件\Common</Filter>
     </ClCompile>
+    <ClCompile Include="Spdlog\SpdlogTest.cpp">
+      <Filter>源文件\Spdlog</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common\UtilsTest.h">
@@ -115,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="Common\Utils.h">
       <Filter>源文件\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Spdlog\SpdlogTest.h">
+      <Filter>源文件\Spdlog</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
