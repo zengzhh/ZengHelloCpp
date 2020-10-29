@@ -44,7 +44,8 @@ int main()
 	glibTest.test_Base64Encoding();*/
 
 	SpdlogTest spdlogTest;
-	spdlogTest.test_SpdlogTest();
+	spdlogTest.test_basic_logger();
+	spdlogTest.test_rotating_logger();
 
-	cin.get();
+	//cin.get();
 }
