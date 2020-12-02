@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZengHelloCpp", "ZengHelloCpp\ZengHelloCpp.vcxproj", "{28302F5A-7E87-4538-81EB-FD2BD3CECB9E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApp", "ConsoleApp\ConsoleApp.vcxproj", "{1734FBDD-5320-45E5-A29A-64851B488716}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{28302F5A-7E87-4538-81EB-FD2BD3CECB9E}.Release|x64.Build.0 = Release|x64
 		{28302F5A-7E87-4538-81EB-FD2BD3CECB9E}.Release|x86.ActiveCfg = Release|Win32
 		{28302F5A-7E87-4538-81EB-FD2BD3CECB9E}.Release|x86.Build.0 = Release|Win32
+		{1734FBDD-5320-45E5-A29A-64851B488716}.Debug|x64.ActiveCfg = Debug|x64
+		{1734FBDD-5320-45E5-A29A-64851B488716}.Debug|x64.Build.0 = Debug|x64
+		{1734FBDD-5320-45E5-A29A-64851B488716}.Debug|x86.ActiveCfg = Debug|Win32
+		{1734FBDD-5320-45E5-A29A-64851B488716}.Debug|x86.Build.0 = Debug|Win32
+		{1734FBDD-5320-45E5-A29A-64851B488716}.Release|x64.ActiveCfg = Release|x64
+		{1734FBDD-5320-45E5-A29A-64851B488716}.Release|x64.Build.0 = Release|x64
+		{1734FBDD-5320-45E5-A29A-64851B488716}.Release|x86.ActiveCfg = Release|Win32
+		{1734FBDD-5320-45E5-A29A-64851B488716}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

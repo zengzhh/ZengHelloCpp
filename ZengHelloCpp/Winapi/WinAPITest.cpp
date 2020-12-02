@@ -45,7 +45,7 @@ void WinAPITest::test_winreg_RegOpenKey()
 	DWORD dwType;
 	WCHAR data[1024];
 	DWORD dwSize = 1024;
-	LONG val = RegOpenKey(HKEY_CURRENT_USER, L"Environment", &hKey);
+	LONG val = RegOpenKeyEx(HKEY_CURRENT_USER, L"Environment", 0, KEY_ALL_ACCESS, &hKey);
 	printf("RegOpenKey Return %ld\n", val);
 	if (val == ERROR_SUCCESS)
 	{

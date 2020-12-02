@@ -43,9 +43,10 @@ int main()
 	glibTest.test_StringUtility();
 	glibTest.test_Base64Encoding();*/
 
-	SpdlogTest spdlogTest;
-	spdlogTest.test_basic_logger();
-	spdlogTest.test_rotating_logger();
+	//SpdlogTest spdlogTest;
+	//spdlogTest.test_basic_logger();
+	//spdlogTest.test_rotating_logger();
 
-	//cin.get();
+	WinAPITest winAPITest;
+	winAPITest.test_winreg_RegOpenKey();
 }
