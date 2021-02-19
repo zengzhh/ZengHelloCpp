@@ -17,29 +17,67 @@ namespace Crypt
 		return dst;
 	}
 
-	const std::string AesEncrypt(const std::string& strText, const std::string& strKey, int enc)
+	const std::string AesCbcEncrypt(const std::string& strText, const std::string& strKey)
 	{
-		if (strText.empty() || strKey.empty())
-			return "";
+		if (strText.empty() || strKey.empty()) return "";
 
 		AES_KEY key;
-		if (AES_ENCRYPT == enc)
-		{
-			if (AES_set_encrypt_key(reinterpret_cast<const unsigned char*>(strKey.c_str()), AES_BLOCK_SIZE * 8, &key) < 0)
-				return "";
-		}
-		else
-		{
-			if (AES_set_decrypt_key(reinterpret_cast<const unsigned char*>(strKey.c_str()), AES_BLOCK_SIZE * 8, &key) < 0)
-				return "";
-		}
+		if (AES_set_encrypt_key(reinterpret_cast<const unsigned char*>(strKey.c_str()), strKey.size() * 8, &key) < 0)
+			return "";
 
 		unsigned char ivec[AES_BLOCK_SIZE + 1] = "yundia0@020-5@9o";
 
-		int len = strText.length();
+		int len = strText.size();
 		int outLen = (len % AES_BLOCK_SIZE ? len + (AES_BLOCK_SIZE - len % AES_BLOCK_SIZE) : len);
 		auto pOut = std::make_unique<unsigned char[]>(outLen);
-		AES_cbc_encrypt(reinterpret_cast<const unsigned char*>(strText.c_str()), reinterpret_cast<unsigned char*>(pOut.get()), len, &key, ivec, enc);
+		AES_cbc_encrypt(reinterpret_cast<const unsigned char*>(strText.c_str()), reinterpret_cast<unsigned char*>(pOut.get()), len, &key, ivec, AES_ENCRYPT);
+		return std::string(reinterpret_cast<const char*>(pOut.get()), outLen);
+	}
+
+	const std::string AesCbcDecrypt(const std::string& strText, const std::string& strKey)
+	{
+		if (strText.empty() || strKey.empty()) return "";
+
+		AES_KEY key;
+		if (AES_set_decrypt_key(reinterpret_cast<const unsigned char*>(strKey.c_str()), strKey.size() * 8, &key) < 0)
+			return "";
+
+		unsigned char ivec[AES_BLOCK_SIZE + 1] = "yundia0@020-5@9o";
+
+		int len = strText.size();
+		int outLen = (len % AES_BLOCK_SIZE ? len + (AES_BLOCK_SIZE - len % AES_BLOCK_SIZE) : len);
+		auto pOut = std::make_unique<unsigned char[]>(outLen);
+		AES_cbc_encrypt(reinterpret_cast<const unsigned char*>(strText.c_str()), reinterpret_cast<unsigned char*>(pOut.get()), len, &key, ivec, AES_DECRYPT);
+		return std::string(reinterpret_cast<const char*>(pOut.get()), outLen);
+	}
+
+	const std::string AesEcbEncrypt(const std::string& strText, const std::string& strKey)
+	{
+		if (strText.empty() || strKey.empty()) return "";
+
+		AES_KEY key;
+		if (AES_set_encrypt_key(reinterpret_cast<const unsigned char*>(strKey.c_str()), strKey.size() * 8, &key) < 0)
+			return "";
+
+		int len = strText.size();
+		int outLen = (len % AES_BLOCK_SIZE ? len + (AES_BLOCK_SIZE - len % AES_BLOCK_SIZE) : len);
+		auto pOut = std::make_unique<unsigned char[]>(outLen);
+		AES_ecb_encrypt(reinterpret_cast<const unsigned char*>(strText.c_str()), reinterpret_cast<unsigned char*>(pOut.get()), &key, AES_ENCRYPT);
+		return std::string(reinterpret_cast<const char*>(pOut.get()), outLen);
+	}
+
+	const std::string AesEcbDecrypt(const std::string& strText, const std::string& strKey)
+	{
+		if (strText.empty() || strKey.empty()) return "";
+
+		AES_KEY key;
+		if (AES_set_decrypt_key(reinterpret_cast<const unsigned char*>(strKey.c_str()), strKey.size() * 8, &key) < 0)
+			return "";
+
+		int len = strText.size();
+		int outLen = (len % AES_BLOCK_SIZE ? len + (AES_BLOCK_SIZE - len % AES_BLOCK_SIZE) : len);
+		auto pOut = std::make_unique<unsigned char[]>(outLen);
+		AES_ecb_encrypt(reinterpret_cast<const unsigned char*>(strText.c_str()), reinterpret_cast<unsigned char*>(pOut.get()), &key, AES_DECRYPT);
 		return std::string(reinterpret_cast<const char*>(pOut.get()), outLen);
 	}
 }

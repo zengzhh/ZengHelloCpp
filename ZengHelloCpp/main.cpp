@@ -47,6 +47,9 @@ int main()
 	//spdlogTest.test_basic_logger();
 	//spdlogTest.test_rotating_logger();
 
-	WinAPITest winAPITest;
-	winAPITest.test_winreg_RegOpenKey();
+	//WinAPITest winAPITest;
+	//winAPITest.test_winreg_RegOpenKey();
+
+	CryptTest ct;
+	ct.test_aesecb_uc();
 }

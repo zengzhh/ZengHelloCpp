@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{28302f5a-7e87-4538-81eb-fd2bd3cecb9e}</ProjectGuid>
-    <RootNamespace>ZengHelloCpp</RootNamespace>
+    <ProjectGuid>{2870ca76-6ecb-472a-97fe-95f85c3b1756}</ProjectGuid>
+    <RootNamespace>AlgorithmDat</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -76,23 +76,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)_build\$(PlatformName)\$(Configuration)\</OutDir>
-    <IntDir>$(ProjectDir)_temp\$(PlatformName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)_build\$(PlatformName)\$(Configuration)\</OutDir>
-    <IntDir>$(ProjectDir)_temp\$(PlatformName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)_build\$(PlatformName)\$(Configuration)\</OutDir>
-    <IntDir>$(ProjectDir)_temp\$(PlatformName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)_build\$(PlatformName)\$(Configuration)\</OutDir>
-    <IntDir>$(ProjectDir)_temp\$(PlatformName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -100,13 +92,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\include;$(SolutionDir)thirdparty\include\glib-2.0;$(SolutionDir)thirdparty\$(Platform)\lib\glib-2.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)thirdparty\$(Platform)\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libcrypto.lib;json_vc71_libmdd.lib;glib-2.0.lib;gmodule-2.0.lib;gobject-2.0.lib;gio-2.0.lib;spdlogd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcrypto.lib;json_vc71_libmtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -117,8 +110,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\thirdparty\include;$(SolutionDir)\thirdparty\include\glib-2.0;$(SolutionDir)\thirdparty\$(Platform)\lib\glib-2.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,7 +119,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)thirdparty\$(Platform)\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libcrypto.lib;json_vc71_libmd.lib;glib-2.0.lib;gmodule-2.0.lib;gobject-2.0.lib;gio-2.0.lib;spdlog.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcrypto.lib;json_vc71_libmt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -135,13 +128,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\thirdparty\include;$(SolutionDir)\thirdparty\include\glib-2.0;$(SolutionDir)\thirdparty\$(Platform)\lib\glib-2.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)thirdparty\$(Platform)\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libcrypto.lib;json_vc71_libmdd.lib;glib-2.0.lib;gmodule-2.0.lib;gobject-2.0.lib;gio-2.0.lib;spdlogd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcrypto.lib;json_vc71_libmtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -152,7 +146,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\thirdparty\include;$(SolutionDir)\thirdparty\include\glib-2.0;$(SolutionDir)\thirdparty\$(Platform)\lib\glib-2.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -160,39 +155,15 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)thirdparty\$(Platform)\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libcrypto.lib;json_vc71_libmd.lib;glib-2.0.lib;gmodule-2.0.lib;gobject-2.0.lib;gio-2.0.lib;spdlog.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcrypto.lib;json_vc71_libmt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Common\Utils.cpp" />
-    <ClCompile Include="Common\UtilsTest.cpp" />
-    <ClCompile Include="Glib\GlibTest.cpp" />
-    <ClCompile Include="Ini\IniReader.cpp" />
-    <ClCompile Include="Ini\IniWriter.cpp" />
-    <ClCompile Include="Json\JsonTest.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Openssl\Crypt.cpp" />
-    <ClCompile Include="Openssl\CryptTest.cpp" />
-    <ClCompile Include="Rapidxml\RapidXmlTest.cpp" />
-    <ClCompile Include="Spdlog\SpdlogTest.cpp" />
-    <ClCompile Include="Winapi\WinAPITest.cpp" />
-    <ClCompile Include="Xxtea\xxtea.c" />
-    <ClCompile Include="Xxtea\XxteaTest.cpp" />
+    <ClCompile Include="aes128.c" />
+    <ClCompile Include="AlgorithmDat.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Common\Utils.h" />
-    <ClInclude Include="Common\UtilsTest.h" />
-    <ClInclude Include="Glib\GlibTest.h" />
-    <ClInclude Include="Ini\IniReader.h" />
-    <ClInclude Include="Ini\iniWriter.h" />
-    <ClInclude Include="Json\JsonTest.h" />
-    <ClInclude Include="Openssl\Crypt.h" />
-    <ClInclude Include="Openssl\CryptTest.h" />
-    <ClInclude Include="Rapidxml\RapidXmlTest.h" />
-    <ClInclude Include="Spdlog\SpdlogTest.h" />
-    <ClInclude Include="Winapi\WinAPITest.h" />
-    <ClInclude Include="Xxtea\xxtea.h" />
-    <ClInclude Include="Xxtea\XxteaTest.h" />
+    <ClInclude Include="aes128.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
