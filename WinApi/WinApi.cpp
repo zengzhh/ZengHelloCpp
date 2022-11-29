@@ -432,3 +432,15 @@ bool RegeditSubkeyChanged(HKEY hKey_, std::wstring path_)
 	RegCloseKey(hRegKey);
 	return false;
 }
+
+std::wstring GetCurrentExePath()
+{
+	wchar_t szPath[MAX_PATH] = { 0 };
+	::GetModuleFileName(0, szPath, _countof(szPath) - 1);
+	std::wstring strPath = szPath;
+	size_t pos = strPath.rfind(L'\\');
+	if (pos != std::wstring::npos)
+		strPath = strPath.substr(0, pos);
+
+	return strPath;
+}

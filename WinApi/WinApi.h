@@ -13,3 +13,5 @@ void printDiskSpace();
 DWORD WINAPI MyCreateProcess(LPVOID pCmd);
 // 监听卸载注册表
 bool RegeditSubkeyChanged(HKEY hKey_, std::wstring path_);
+// 创建路径
+std::wstring GetCurrentExePath();

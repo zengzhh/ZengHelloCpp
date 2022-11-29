@@ -50,6 +50,6 @@ int main()
 	//WinAPITest winAPITest;
 	//winAPITest.test_winreg_RegOpenKey();
 
-	CryptTest ct;
-	ct.test_aesecb_uc();
+	JsonTest jsonTest;
+	jsonTest.test_parsearray();
 }
