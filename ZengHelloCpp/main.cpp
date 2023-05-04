@@ -2,10 +2,7 @@
 //
 
 #include <iostream>
-#include "Common/UtilsTest.h"
-#include "Glib/GlibTest.h"
 #include "Json/JsonTest.h"
-#include "Openssl/CryptTest.h"
 #include "Rapidxml/RapidXmlTest.h"
 #include "Winapi/WinAPITest.h"
 #include "Xxtea/XxteaTest.h"
@@ -50,6 +47,12 @@ int main()
 	//WinAPITest winAPITest;
 	//winAPITest.test_winreg_RegOpenKey();
 
+	//JsonTest jsonTest;
+	//jsonTest.test_ClinkProtect();test_buildjson
+
+	//CryptTest cryptTest;
+	//cryptTest.test_aescbc2();
+
 	JsonTest jsonTest;
-	jsonTest.test_parsearray();
+	jsonTest.test_parsejson();
 }

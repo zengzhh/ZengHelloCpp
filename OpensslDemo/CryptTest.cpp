@@ -1,51 +1,69 @@
 #include "CryptTest.h"
 #include <iostream>
 #include "json/json.h"
-#include "..\Openssl/Crypt.h"
+#include "Crypt.h"
 #include "..\Common\Utils.h"
 
 using namespace std;
 
-void CryptTest::test_aescbc()
+void test_aescbc()
 {
 	cout << "**** test_aescbc()" << endl;
-	// encrypt: char* -> unsigned char* -> hex
-	Json::Value root;
-	root["checkParam"] = "apiKey=testkeyasdsadsadasdas&nonStr=TYphone9&timestamp=1601005126&sign=94a1bc9cd97adce8e72cdb8d62c10606";
-	auto strCertOrg = root.toStyledString();
-	printf("in: %s\n", strCertOrg.c_str());
 
-	std::string strKey("@ctYun@0pen@plat");
-	std::string cert = Crypt::AesCbcEncrypt(strCertOrg, strKey);
-	for (int i = 0; i < cert.length(); i++)
-	{
-		printf("%d ", (unsigned char)cert.c_str()[i]);
-	}
-	printf("\n");
+	std::string strKey("Ir1RYxDcJCO{5#yi");
 
-	std::unique_ptr<char[]> pEnc = std::make_unique<char[]>(cert.length() * 2 + 1);
 
-	for (int i = 0; i < cert.length(); i++)
-		sprintf_s(pEnc.get() + i * 2, 3, "%02x", (unsigned char)cert[i]);
+	std::string passwd("2022@test_passwdstr");
+	printf("utf8: %s %d\n", passwd.c_str(), passwd.length());
+	std::string certHex = Crypt::AesCbcEncrypt(passwd, strKey);
+	printf("en(hex): %s\n", certHex.c_str());
 
-	pEnc[cert.length() * 2] = 0;
-	printf("en: %s\n", pEnc.get());
-
-	// decrypt: hex -> unsigned char* -> char*
-	int deslen = strlen(pEnc.get()) / 2;
-	unsigned char* des = (unsigned char*)calloc(deslen + 1, 1);
-	Utils::HexLowerToByte(pEnc.get(), des, strlen(pEnc.get()));
-	for (int i = 0; i < deslen; i++)
-	{
-		printf("%d ", (unsigned char)des[i]);
-	}
-	printf("\n");
-
-	std::string decrypted = Crypt::AesCbcDecrypt(std::string((char*)des), strKey);
-	printf("out: %s\n", decrypted.c_str());
+	std::string decrypted = Crypt::AesCbcDecrypt(certHex, strKey);
+	printf("utf8: %s %d\n", decrypted.c_str(), decrypted.length());
 }
 
-void CryptTest::test_aesecb()
+void test_aescbc2()
+{
+//	// encrypt: char* -> unsigned char* -> hex
+//	std::string passwd("2022@test_passwdstr");
+//	printf("utf8: %s %d\n", passwd.c_str(), passwd.length());
+//
+//	std::string strKey("Ir1RYxDcJCO{5#yi");
+//	std::string ivecStr("fwtWXTQBt3VG@lGu");
+//
+//	vector<unsigned char> strByte = Crypt::AesEncrypt(passwd, strKey, ivecStr, 1);
+//	string strHex;
+//	printf("byte[]: ");
+//	for (int i = 0; i < strByte.size(); i++)
+//	{
+//		printf("%d ", (unsigned char)strByte.at(i));
+//	}
+//	printf("\n");
+//
+//	int hexLen = strByte.size() * 2;
+//	std::unique_ptr<char[]> hex = std::make_unique<char[]>(hexLen + 1);
+//	for (int i = 0; i < strByte.size(); i++)
+//		sprintf_s(hex.get() + i * 2, 3, "%02x", (unsigned char)strByte[i]);
+//	printf("hex: %s", hex.get());
+//
+//	// decrypt: hex -> unsigned char* -> char*
+//	string strText = string(hex.get());
+//	int hexLen = strText.length();
+//	int byteLen = hexLen / 2;
+//	std::unique_ptr<unsigned char[]> pIn = std::make_unique<unsigned char[]>(byteLen);
+//	Utils::HexLowerToByte(strText.c_str(), pIn.get(), strText.length());
+//	for (int i = 0; i < byteLen; i++)
+//	{
+//		printf("%d ", (unsigned char)pIn[i]);
+//	}
+//	printf("\n");
+//
+//	vector<unsigned char> strByte = Crypt::AesEncrypt(passwd, strKey, ivecStr, 0);
+
+	printf("\n");
+}
+
+void test_aesecb()
 {
 	cout << "**** test_aesecb()" << endl;
 	// encrypt: char* -> unsigned char* -> hex
@@ -80,7 +98,7 @@ void CryptTest::test_aesecb()
 	printf("out: %s\n", decrypted.c_str());
 }
 
-void CryptTest::test_aesecb_uc()
+void test_aesecb_uc()
 {
 	cout << "**** test_aesecb_uc()" << endl;
 	string strin = "Vprt8UirdqHRTKeW";

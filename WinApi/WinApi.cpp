@@ -444,3 +444,93 @@ std::wstring GetCurrentExePath()
 
 	return strPath;
 }
+
+#include <ShlObj.h>
+
+void open_folder() {
+	TCHAR szPathName[MAX_PATH];
+	BROWSEINFO bInfo = { 0 };
+	bInfo.hwndOwner = GetForegroundWindow();//父窗口  
+	//bInfo.lpszTitle = TEXT("选择文件夹");
+	bInfo.ulFlags = BIF_RETURNONLYFSDIRS // 仅返回文件系统目录。 如果用户选择不属于文件系统的文件夹，则 “确定 ”按钮灰显。
+		| BIF_USENEWUI // 使用新的用户界面，包括编辑框。允许用户键入项的名称，可以调整大小。
+		//| BIF_UAHINT // 请将使用提示添加到对话框，代替编辑框。
+		//| BIF_NONEWFOLDERBUTTON // 不要在浏览对话框中包括 “新建文件夹 ”按钮。
+		;
+	LPITEMIDLIST lpDlist;
+	lpDlist = SHBrowseForFolder(&bInfo);
+	if (lpDlist != NULL)
+	{
+		SHGetPathFromIDList(lpDlist, szPathName);
+		//CString strFile = _T("");
+		//strFile.Format(_T("Select path %s/n"), szPathName);
+		//MessageBox(strFile);
+		printf("");
+	}
+	printf("\n");
+}
+
+#include <SetupAPI.h>
+#pragma comment(lib, "SetupAPI.lib")
+
+std::string getDeviceVIDPID() {
+
+	std::string ret("");
+	HDEVINFO hDevInfo;
+	SP_DEVINFO_DATA DeviceInfoData;
+	DWORD i;
+
+	// SetupDiGetClassDevs
+	hDevInfo = SetupDiGetClassDevs(NULL, 0, 0, DIGCF_PRESENT | DIGCF_ALLCLASSES);
+	if (hDevInfo == INVALID_HANDLE_VALUE)
+		return ret;
+
+	DeviceInfoData.cbSize = sizeof(SP_DEVINFO_DATA);
+
+	// SetupDiEnumDeviceInfo
+	for (i = 0; SetupDiEnumDeviceInfo(hDevInfo, i, &DeviceInfoData); i++)
+	{
+		char szClassBuf[MAX_PATH] = { 0 };
+		char szHardWareBuf[MAX_PATH] = { 0 };
+		// CLASS
+		if (!SetupDiGetDeviceRegistryPropertyA(hDevInfo, &DeviceInfoData, SPDRP_CLASS, NULL, (PBYTE)szClassBuf, MAX_PATH - 1, NULL))
+			continue;
+		// HARDWAREID
+		if (!SetupDiGetDeviceRegistryPropertyA(hDevInfo, &DeviceInfoData, SPDRP_HARDWAREID, NULL, (PBYTE)szHardWareBuf, MAX_PATH - 1, NULL))
+			continue;
+		// SPDRP_FRIENDLYNAME
+		char szNameBuf[MAX_PATH] = { 0 };
+		if (!SetupDiGetDeviceRegistryPropertyA(hDevInfo, &DeviceInfoData, SPDRP_FRIENDLYNAME, NULL, (PBYTE)szNameBuf, MAX_PATH - 1, NULL))
+			continue;
+		// SPDRP_DEVICEDESC
+		char szDeviceDescBuf[MAX_PATH] = { 0 };
+		if (!SetupDiGetDeviceRegistryPropertyA(hDevInfo, &DeviceInfoData, SPDRP_DEVICEDESC, NULL, (PBYTE)szDeviceDescBuf, MAX_PATH - 1, NULL))
+			continue;
+
+		// Display device
+		if (szClassBuf[0] && strcmp(szClassBuf, "Display") == 0)
+		{
+			printf("[%d] Class: %s, id: %s, friendlyName: %s, deviceDesc: %s\n", i, szClassBuf, szHardWareBuf, szNameBuf, szDeviceDescBuf);
+			// DisplayLink USB Device
+			if (szDeviceDescBuf[0] && strcmp(szDeviceDescBuf, "DisplayLink USB Device") == 0)
+			{
+				// eg. VID_17E9&PID_03C2 or USB\VID_17E9&PID_0406&REV_0189
+				if (strlen(szDeviceDescBuf) >= 17)
+				{
+					std::string hardwareId(szHardWareBuf);
+					size_t found = hardwareId.find("VID");
+					if (found != std::string::npos)
+					{
+						hardwareId = hardwareId.substr(found, 17);
+						printf("find vid&pid: %s", hardwareId.c_str());
+						ret = hardwareId;
+					}
+				}
+
+			}
+		}
+	}
+
+	SetupDiDestroyDeviceInfoList(hDevInfo);
+	return ret;
+}

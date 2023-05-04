@@ -15,3 +15,7 @@ DWORD WINAPI MyCreateProcess(LPVOID pCmd);
 bool RegeditSubkeyChanged(HKEY hKey_, std::wstring path_);
 // 创建路径
 std::wstring GetCurrentExePath();
+// 选择目录
+void open_folder();
+// 枚举设备VIDPID
+std::string getDeviceVIDPID();

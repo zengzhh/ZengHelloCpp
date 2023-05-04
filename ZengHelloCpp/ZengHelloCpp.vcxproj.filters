@@ -13,20 +13,11 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="源文件\Common">
-      <UniqueIdentifier>{006602b6-46bc-4f7e-be51-cf6248adbe26}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\Glib">
-      <UniqueIdentifier>{955c8040-0fc5-4c55-8923-fc2c13c03486}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\Ini">
       <UniqueIdentifier>{34e8cc27-67b8-4a0b-b81c-8fad14410f67}</UniqueIdentifier>
     </Filter>
     <Filter Include="源文件\Json">
       <UniqueIdentifier>{9976a764-28a5-4406-9441-26678dae072d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\Openssl">
-      <UniqueIdentifier>{e15f2b67-af49-4b38-9ce6-55b9b427a474}</UniqueIdentifier>
     </Filter>
     <Filter Include="源文件\Rapidxml">
       <UniqueIdentifier>{84d7c279-742c-4c95-be29-dd0a89eec0df}</UniqueIdentifier>
@@ -40,16 +31,13 @@
     <Filter Include="源文件\Spdlog">
       <UniqueIdentifier>{666d3813-30eb-4dfe-acf5-42ab2a4406f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\common">
+      <UniqueIdentifier>{e7b46163-9d79-4bf9-a64d-fbdc92849a60}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\UtilsTest.cpp">
-      <Filter>源文件\Common</Filter>
-    </ClCompile>
-    <ClCompile Include="Glib\GlibTest.cpp">
-      <Filter>源文件\Glib</Filter>
     </ClCompile>
     <ClCompile Include="Ini\IniWriter.cpp">
       <Filter>源文件\Ini</Filter>
@@ -59,12 +47,6 @@
     </ClCompile>
     <ClCompile Include="Json\JsonTest.cpp">
       <Filter>源文件\Json</Filter>
-    </ClCompile>
-    <ClCompile Include="Openssl\Crypt.cpp">
-      <Filter>源文件\Openssl</Filter>
-    </ClCompile>
-    <ClCompile Include="Openssl\CryptTest.cpp">
-      <Filter>源文件\Openssl</Filter>
     </ClCompile>
     <ClCompile Include="Rapidxml\RapidXmlTest.cpp">
       <Filter>源文件\Rapidxml</Filter>
@@ -78,20 +60,17 @@
     <ClCompile Include="Xxtea\XxteaTest.cpp">
       <Filter>源文件\Xxtea</Filter>
     </ClCompile>
-    <ClCompile Include="Common\Utils.cpp">
-      <Filter>源文件\Common</Filter>
-    </ClCompile>
     <ClCompile Include="Spdlog\SpdlogTest.cpp">
       <Filter>源文件\Spdlog</Filter>
     </ClCompile>
+    <ClCompile Include="..\Common\UtilsTest.cpp">
+      <Filter>源文件\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Utils.cpp">
+      <Filter>源文件\common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Common\UtilsTest.h">
-      <Filter>源文件\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Glib\GlibTest.h">
-      <Filter>源文件\Glib</Filter>
-    </ClInclude>
     <ClInclude Include="Ini\iniWriter.h">
       <Filter>源文件\Ini</Filter>
     </ClInclude>
@@ -100,12 +79,6 @@
     </ClInclude>
     <ClInclude Include="Json\JsonTest.h">
       <Filter>源文件\Json</Filter>
-    </ClInclude>
-    <ClInclude Include="Openssl\Crypt.h">
-      <Filter>源文件\Openssl</Filter>
-    </ClInclude>
-    <ClInclude Include="Openssl\CryptTest.h">
-      <Filter>源文件\Openssl</Filter>
     </ClInclude>
     <ClInclude Include="Rapidxml\RapidXmlTest.h">
       <Filter>源文件\Rapidxml</Filter>
@@ -119,11 +92,14 @@
     <ClInclude Include="Xxtea\XxteaTest.h">
       <Filter>源文件\Xxtea</Filter>
     </ClInclude>
-    <ClInclude Include="Common\Utils.h">
-      <Filter>源文件\Common</Filter>
-    </ClInclude>
     <ClInclude Include="Spdlog\SpdlogTest.h">
       <Filter>源文件\Spdlog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UtilsTest.h">
+      <Filter>源文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Utils.h">
+      <Filter>源文件\common</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
