@@ -21,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpensslDemo", "OpensslDemo\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GLibDemo", "GLibDemo\GLibDemo.vcxproj", "{7CC3FED9-2274-4F0D-B84F-00C3A5D047AE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "easylog", "easylog\easylog.vcxproj", "{98393E71-3ED0-43A8-A0F1-93C0E7963348}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -141,6 +143,18 @@ Global
 		{7CC3FED9-2274-4F0D-B84F-00C3A5D047AE}.Release|x64.Build.0 = Release|x64
 		{7CC3FED9-2274-4F0D-B84F-00C3A5D047AE}.Release|x86.ActiveCfg = Release|Win32
 		{7CC3FED9-2274-4F0D-B84F-00C3A5D047AE}.Release|x86.Build.0 = Release|Win32
+		{98393E71-3ED0-43A8-A0F1-93C0E7963348}.Debug|ARM.ActiveCfg = Debug|Win32
+		{98393E71-3ED0-43A8-A0F1-93C0E7963348}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{98393E71-3ED0-43A8-A0F1-93C0E7963348}.Debug|x64.ActiveCfg = Debug|x64
+		{98393E71-3ED0-43A8-A0F1-93C0E7963348}.Debug|x64.Build.0 = Debug|x64
+		{98393E71-3ED0-43A8-A0F1-93C0E7963348}.Debug|x86.ActiveCfg = Debug|Win32
+		{98393E71-3ED0-43A8-A0F1-93C0E7963348}.Debug|x86.Build.0 = Debug|Win32
+		{98393E71-3ED0-43A8-A0F1-93C0E7963348}.Release|ARM.ActiveCfg = Release|Win32
+		{98393E71-3ED0-43A8-A0F1-93C0E7963348}.Release|ARM64.ActiveCfg = Release|Win32
+		{98393E71-3ED0-43A8-A0F1-93C0E7963348}.Release|x64.ActiveCfg = Release|x64
+		{98393E71-3ED0-43A8-A0F1-93C0E7963348}.Release|x64.Build.0 = Release|x64
+		{98393E71-3ED0-43A8-A0F1-93C0E7963348}.Release|x86.ActiveCfg = Release|Win32
+		{98393E71-3ED0-43A8-A0F1-93C0E7963348}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
